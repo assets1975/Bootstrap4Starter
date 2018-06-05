@@ -15,16 +15,20 @@
     "popper.js": "latest"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "browser-sync": "latest",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-react": "^7.9.1",
     "gulp": "latest",
-    "gulp-sass": "latest",
     "gulp-autoprefixer": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-eslint": "^4.0.2",
+    "gulp-imagemin": "latest",
     "gulp-minify-css": "latest",
+    "gulp-sass": "latest",
     "gulp-sourcemaps": "latest",
     "gulp-uglify": "latest",
-    "gulp-clean-css": "latest",
-    "gulp-imagemin": "latest",
     "imagemin-pngquant": "latest",
-    "rimraf": "latest",
-    "browser-sync": "latest"
+    "rimraf": "latest"
   }
 }
