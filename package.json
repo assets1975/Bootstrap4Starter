@@ -1,0 +1,30 @@
+{
+  "name": "bs4starter",
+  "version": "1.0.0",
+  "description": "Bootstrap 4 starter",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "Asset Saparov",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "latest",
+    "font-awesome": "latest",
+    "jquery": "latest",
+    "popper.js": "latest"
+  },
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-sass": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-uglify": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-imagemin": "latest",
+    "imagemin-pngquant": "latest",
+    "rimraf": "latest",
+    "browser-sync": "latest"
+  }
+}
