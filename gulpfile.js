@@ -10,15 +10,20 @@ const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const rimraf = require('rimraf');
 const eslint = require('gulp-eslint');
+const scsslint = require('gulp-scss-lint');
 const reload = browserSync.reload;
 
 // Compile Sass & Inject Into Browser
 gulp.task('scss:build', function() {
     return gulp.src([
-        'node_modules/bootstrap/scss/bootstrap.scss',
+        // 'node_modules/bootstrap/scss/bootstrap.scss',
         'src/scss/*.scss'
     ]) // Выбираем наши scss фаилы
     //  return gulp.src([ 'src/scss/*.scss']) // Выбираем наши scss фаилы
+        .pipe(scsslint({
+            'config': 'lint.yml'
+        }))
+        // .pipe(scsslint.failReporter())
         .pipe(sourcemaps.init()) // То же самое что и с js
         .pipe(sass()) //    Скомпилируем
         .pipe(prefixer()) //    Добавим вендорные префиксы

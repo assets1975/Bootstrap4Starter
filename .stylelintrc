@@ -1,0 +1,37 @@
+{
+  "rules": {
+    "font-family-name-quotes": "always-where-recommended",
+    "font-weight-notation": "numeric",
+    "length-zero-no-unit": true,
+    "value-list-comma-newline-after": "never-multi-line",
+    "shorthand-property-no-redundant-values": true,
+    "property-no-unknown": true,
+    "block-no-empty": null,
+    "color-no-invalid-hex": true,
+    "declaration-block-no-duplicate-properties" : true,    
+    "declaration-block-no-redundant-longhand-properties" : true,
+    "declaration-block-no-shorthand-property-overrides" : true,
+    "declaration-block-semicolon-newline-before" : "never-multi-line",
+    "declaration-block-single-line-max-declarations": 1,
+    "comment-empty-line-before": [ "always", {
+      "ignore": ["stylelint-commands", "after-comment"]
+    } ],
+    "declaration-colon-space-after": "always",
+    declaration-colon-newline-after : "always-multi-line",
+    "indentation": [ 4, {
+      "except": ["block","value"],
+      "message": "Please use 2 spaces for indentation. Tabs make The Architect grumpy.",
+      "severity": "warning"
+    } ],    
+    "max-empty-lines": 2,
+    "rule-empty-line-before": [ "always", {
+      "except": ["first-nested"],
+      "ignore": ["after-comment"]
+    } ],
+    "unit-whitelist": ["em", "rem", "%", "px"],
+    declaration-property-unit-whitelist: {
+      "font-size": ["em", "px", "rem", "%"],
+      "/^animation/": ["s"]
+    }    
+  }
+}
