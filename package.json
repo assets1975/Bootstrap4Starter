@@ -17,6 +17,7 @@
   "devDependencies": {
     "babel-eslint": "^8.2.3",
     "browser-sync": "latest",
+    "eslint": "^4.19.1",
     "eslint-config-google": "^0.9.1",
     "eslint-plugin-react": "^7.9.1",
     "gulp": "latest",
@@ -31,6 +32,7 @@
     "gulp-sourcemaps": "latest",
     "gulp-uglify": "latest",
     "imagemin-pngquant": "latest",
-    "rimraf": "latest"
+    "rimraf": "latest",
+    "stylelint": "^9.2.1"
   }
 }
