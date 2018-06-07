@@ -23,18 +23,24 @@ npm start
 Files are compiled into /src
 
 
-How to config stylelint
-https://stylelint.io/user-guide/configuration/   конфига читать вот это
-https://github.com/MerrickGit/material/blob/master/styleLint/02-Rules.md перевод на русском
+#### How to config stylelint
+```
+конфига читать вот это: https://stylelint.io/user-guide/configuration/
+перевод на русском: https://github.com/MerrickGit/material/blob/master/styleLint/02-Rules.md 
 https://github.com/MerrickGit/material
 https://stylelint.io/user-guide/configuration/
-нужно установить плагин stylelint
-в конфиге vscode
+```
+### Нужно установить плагин. 	
+npm install --save-dev stylelint
+
+### В конфиге vscode
+```
 	{
 	"stylelint.enable": true,
 	"css.validate": false,
 	"scss.validate": false
 	}
+```
 
 
 
