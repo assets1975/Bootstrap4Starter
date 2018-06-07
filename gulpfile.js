@@ -6,11 +6,12 @@ const cssmin = require('gulp-minify-css');
 const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
 // const cleanCSS = require('gulp-clean-css');
+const plumber = require('gulp-plumber');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const rimraf = require('rimraf');
 const eslint = require('gulp-eslint');
-const scsslint = require('gulp-scss-lint');
+// const scsslint = require('gulp-scss-lint');
 const reload = browserSync.reload;
 
 // Compile Sass & Inject Into Browser
@@ -20,9 +21,10 @@ gulp.task('scss:build', function() {
         'src/scss/*.scss'
     ]) // Выбираем наши scss фаилы
     //  return gulp.src([ 'src/scss/*.scss']) // Выбираем наши scss фаилы
-        .pipe(scsslint({
-            'config': 'lint.yml'
-        }))
+        .pipe(plumber())
+        // .pipe(scsslint({
+        //    'config': 'lint.yml'
+        // }))
         // .pipe(scsslint.failReporter())
         .pipe(sourcemaps.init()) // То же самое что и с js
         .pipe(sass()) //    Скомпилируем
@@ -36,6 +38,7 @@ gulp.task('scss:build', function() {
 
 gulp.task('sass:build', function() {
     return gulp.src(['src/sass/*.sass']) // Выбираем наши scss фаилы
+        .pipe(plumber())
         .pipe(sourcemaps.init()) // То же самое что и с js
         .pipe(sass()) // Скомпилируем
         .pipe(prefixer()) // Добавим вендорные префиксы
@@ -53,6 +56,7 @@ gulp.task('js:build', function() {
         'node_modules/popper.js/dist/umd/popper.min.js',
         'src/js/*.js'
     ])
+        .pipe(plumber())
         .pipe(sourcemaps.init()) // Инициализируем sourcemap
         .pipe(eslint())
         .pipe(eslint.format())
@@ -72,6 +76,7 @@ gulp.task('image:build', function() {
             use: [pngquant()],
             interlaced: true
         }))
+        .pipe(plumber())
         .pipe(gulp.dest('dist/img')) // И бросим в build
         // .pipe(browserSync.stream());
         .pipe(reload({stream: true}));
@@ -79,16 +84,18 @@ gulp.task('image:build', function() {
 
 gulp.task('html:build', function() {
     return gulp.src('src/*.html')// Выберем файлы по нужному пути
+        .pipe(plumber())
         .pipe(gulp.dest('dist/'))// Выплюнем их в папку build
         .pipe(reload({stream: true}));// И перезагрузим наш сервер
 });
 
 // Move Fonts to src/fonts
 gulp.task('fonts:build', function() {
-  return gulp.src([
-    'node_modules/font-awesome/fonts/*',
-    'src/fonts/**/*.*'
-])
+    return gulp.src([
+        'node_modules/font-awesome/fonts/*',
+        'src/fonts/**/*.*'
+    ])
+    .pipe(plumber())
     .pipe(gulp.dest('dist/fonts'))
     .pipe(reload({stream: true}));
 })
@@ -96,6 +103,7 @@ gulp.task('fonts:build', function() {
 // Move Font Awesome CSS to src/css
 gulp.task('fa:build', function() {
   return gulp.src(['node_modules/font-awesome/css/font-awesome.min.css'])
+    .pipe(plumber())
     .pipe(gulp.dest('dist/css'))
     .pipe(reload({stream: true}));
 })
@@ -123,10 +131,11 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch([
-        'node_modules/bootstrap/scss/bootstrap.scss',
-        'src/scss/*.scss'], function(event, cb) {
+    gulp.watch(['src/sass/*.sass'], function(event, cb) {
         gulp.start(['sass:build']);
+    });
+    gulp.watch(['src/scss/*.scss'], function(event, cb) {
+        gulp.start(['scss:build']);
     });
     gulp.watch(['src/js/*.js'], function(event, cb) {
         gulp.start(['js:build']);
