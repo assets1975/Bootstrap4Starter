@@ -1,5 +1,80 @@
+/*спецификация*/
+
+@font-face {
+    font-family: OpenSans;
+    src: url('../fonts/OpenSans-Light.eot?#iefix') format('embedded-opentype'),  url('../fonts/OpenSans-Light.woff') format('woff'), url('../fonts/OpenSans-Light.ttf')  format('truetype'), url('../fonts/OpenSans-Light.svg#OpenSans-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;}
+
+@font-face {
+    font-family: OpenSans;
+    src: url('../fonts/OpenSans.eot?#iefix') format('embedded-opentype'),  url('../fonts/OpenSans.woff') format('woff'), url('../fonts/OpenSans.ttf')  format('truetype'), url('../fonts/OpenSans.svg#OpenSans') format('svg');
+    font-weight: 400;
+    font-style: normal;}
+
+@font-face {
+    font-family: OpenSans;
+    src: url('../fonts/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),  url('../fonts/OpenSans-Semibold.woff') format('woff'), url('../fonts/OpenSans-Semibold.ttf')  format('truetype'), url('../fonts/OpenSans-Semibold.svg#OpenSans-Semibold') format('svg');
+    font-weight: 600;
+    font-style: normal;}
+
+@font-face {
+    font-family: OpenSans;
+    src: url('../fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),  url('../fonts/OpenSans-Bold.woff') format('woff'), url('../fonts/OpenSans-Bold.ttf')  format('truetype'), url('../fonts/OpenSans-Bold.svg#OpenSans-Bold') format('svg');
+    font-weight: 700;
+    font-style: normal;}
+
+ul,li {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
 // Main Sass File
 html {
+    font-family: OpenSans, sans-serif;
+    font-size: 16px;
     margin: 0 auto;
-    background-color: #a4a412;
 }
+
+.top-header {
+    background-color: #eceef4;
+    height: 3.9375rem;
+}
+
+.header-menu__item {
+    height: 2.0625rem;
+    width: 6.0625rem;    
+    border-radius: 4px;
+    margin-left: 0.375rem;
+}
+
+.header-menu__item a {
+    font-family: OpenSans;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: #6d6e71;
+    padding-left: 2.75rem;
+    line-height: 2.0625rem;
+}
+
+.header-menu__item_blog {
+    background: url('../img/blogs.png') 0.625rem 50% no-repeat;
+    background-color: #fff;
+}
+
+.header-menu__item_job {
+    background: url('../img/jobs.png') 0.625rem 50% no-repeat;
+    background-color: #fff;
+}
+
+.header-menu__item_support {
+    background: url('../img/support.png') 0.625rem 50% no-repeat;
+    background-color: #fff;
+}
+
+.header-menu__item_arabic {
+    background: url('../img/arabic.png') 0.625rem 50% no-repeat;
+    background-color: #fff;
+}
+

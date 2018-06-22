@@ -11,17 +11,25 @@ const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const rimraf = require('rimraf');
 const eslint = require('gulp-eslint');
+// const restart = require('gulp-restart');
+
 // const scsslint = require('gulp-scss-lint');
 const reload = browserSync.reload;
+
 
 // Compile Sass & Inject Into Browser
 gulp.task('scss:build', function() {
     return gulp.src([
-        // 'node_modules/bootstrap/scss/bootstrap.scss',
+        'node_modules/bootstrap/scss/bootstrap.scss',
         'src/scss/*.scss'
     ]) // Выбираем наши scss фаилы
     //  return gulp.src([ 'src/scss/*.scss']) // Выбираем наши scss фаилы
-        .pipe(plumber())
+        .pipe(plumber({
+            errorHandler: function(err) {
+              console.log(err);
+              this.emit('end');
+            }
+          }))
         // .pipe(scsslint({
         //    'config': 'lint.yml'
         // }))
@@ -32,13 +40,18 @@ gulp.task('scss:build', function() {
         .pipe(cssmin()) //  Сожмем
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/css'))
-        // .pipe(browserSync.stream());
-        .pipe(reload({stream: true}));
+         .pipe(browserSync.stream());
+        // .pipe(reload({stream: true}));
 });
 
 gulp.task('sass:build', function() {
     return gulp.src(['src/sass/*.sass']) // Выбираем наши scss фаилы
-        .pipe(plumber())
+        .pipe(plumber({
+            errorHandler: function(err) {
+            console.log(err);
+            this.emit('end');
+            }
+        }))
         .pipe(sourcemaps.init()) // То же самое что и с js
         .pipe(sass()) // Скомпилируем
         .pipe(prefixer()) // Добавим вендорные префиксы
@@ -56,7 +69,12 @@ gulp.task('js:build', function() {
         'node_modules/popper.js/dist/umd/popper.min.js',
         'src/js/*.js'
     ])
-        .pipe(plumber())
+        .pipe(plumber({
+            errorHandler: function(err) {
+            console.log(err);
+            this.emit('end');
+            }
+        }))
         .pipe(sourcemaps.init()) // Инициализируем sourcemap
         .pipe(eslint())
         .pipe(eslint.format())
@@ -70,13 +88,18 @@ gulp.task('js:build', function() {
 
 gulp.task('image:build', function() {
     return gulp.src(['src/img/**/*.*']) // Выберем наши картинки
+        .pipe(plumber({
+            errorHandler: function(err) {
+            console.log(err);
+            this.emit('end');
+            }
+        }))
         .pipe(imagemin({ // Сожмем их
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()],
             interlaced: true
         }))
-        .pipe(plumber())
         .pipe(gulp.dest('dist/img')) // И бросим в build
         // .pipe(browserSync.stream());
         .pipe(reload({stream: true}));
@@ -84,7 +107,12 @@ gulp.task('image:build', function() {
 
 gulp.task('html:build', function() {
     return gulp.src('src/*.html')// Выберем файлы по нужному пути
-        .pipe(plumber())
+        .pipe(plumber({
+            errorHandler: function(err) {
+            console.log(err);
+            this.emit('end');
+            }
+        }))
         .pipe(gulp.dest('dist/'))// Выплюнем их в папку build
         .pipe(reload({stream: true}));// И перезагрузим наш сервер
 });
@@ -95,7 +123,12 @@ gulp.task('fonts:build', function() {
         'node_modules/font-awesome/fonts/*',
         'src/fonts/**/*.*'
     ])
-    .pipe(plumber())
+    .pipe(plumber({
+        errorHandler: function(err) {
+          console.log(err);
+          this.emit('end');
+        }
+      }))
     .pipe(gulp.dest('dist/fonts'))
     .pipe(reload({stream: true}));
 })
@@ -103,7 +136,12 @@ gulp.task('fonts:build', function() {
 // Move Font Awesome CSS to src/css
 gulp.task('fa:build', function() {
   return gulp.src(['node_modules/font-awesome/css/font-awesome.min.css'])
-    .pipe(plumber())
+    .pipe(plumber({
+        errorHandler: function(err) {
+        console.log(err);
+        this.emit('end');
+        }
+    }))
     .pipe(gulp.dest('dist/css'))
     .pipe(reload({stream: true}));
 })

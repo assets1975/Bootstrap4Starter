@@ -27,12 +27,14 @@
     "gulp-imagemin": "latest",
     "gulp-minify-css": "latest",
     "gulp-plumber": "^1.2.0",
+    "gulp-restart": "^0.1.1",
     "gulp-sass": "latest",
     "gulp-scss-lint": "^0.6.1",
     "gulp-sourcemaps": "latest",
     "gulp-uglify": "latest",
+    "gulp-watch": "^5.0.0",
     "imagemin-pngquant": "latest",
     "rimraf": "latest",
-    "stylelint": "^9.2.1"
+    "stylelint": "^9.3.0"
   }
 }
