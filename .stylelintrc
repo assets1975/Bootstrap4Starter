@@ -30,7 +30,7 @@
     } ],
     "unit-whitelist": ["em", "rem", "%", "px"],
     declaration-property-unit-whitelist: {
-      "font-size": ["em", "px", "rem", "%"],
+      "font-size": ["em", "px", "rem", "%", "deg"],
       "/^animation/": ["s"]
     }    
   }
