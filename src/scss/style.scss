@@ -200,8 +200,7 @@ a {
 .main-menu__item {
     border-left: 1px solid #eceef4;    
     height: 5.375rem;  
-    position: relative;
-    //transition: text-transform 5s ease-out;
+    position: relative; 
 }
 
 .main-menu__item a {
@@ -213,45 +212,52 @@ a {
 }
 
 .main-menu__item a:hover {
-    text-transform: uppercase;
+    //text-transform: uppercase;
     color: #1faae2;
-    text-decoration: none;  
+    text-decoration: none;
 }
 
-.main-menu__item_home  a:hover:before, .main-menu__item_isama a:hover:before,
-.main-menu__item_what-we-do a:hover:before, .main-menu__item_our-projects a:hover:before,
-.main-menu__item_excellent-team a:hover:before, .main-menu__item_contact a:hover:before {
+.main-menu__item:before {
     content: '';
-    top: 0;
+    top: 0.5rem;
     left: 0;
-    border-bottom: 0.5rem solid #1faae2;
+    border-bottom: 0.5rem solid transparent;
     border-left: 1.09375rem solid transparent;
     border-right: 1.09375rem solid transparent;
     position: absolute;
     margin-top: 4.875rem;
+    opacity: 0;
+    -webkit-transition: all 3s;
+    transition: all 0.5s;    
 }
 
-.main-menu__item_home  a:hover:before{
+.main-menu__item:hover:before {
+    opacity: 1;
+    top: 0;
+    border-bottom: 0.5rem solid #1faae2;
+}
+
+.main-menu__item_home:before {
     margin-left: 30%;
 }
 
-.main-menu__item_isama a:hover::before{
+.main-menu__item_isama:before{
     margin-left: 37%; 
 }
 
-.main-menu__item_what-we-do a:hover:before{
+.main-menu__item_what-we-do:before{
     margin-left: 34%;
 }
 
-.main-menu__item_our-projects a:hover:before{
+.main-menu__item_our-projects:before{
     margin-left: 35%;
 }
 
-.main-menu__item_excellent-team a:hover:before{
+.main-menu__item_excellent-team:before{
     margin-left: 35%;
 }
 
-.main-menu__item_contact a:hover:before{
+.main-menu__item_contact:before{
     margin-left: 34%;
 }
 
@@ -303,34 +309,30 @@ a {
     font-family: FontAwesome;
     color: $primary_color;
     font-size: 1.5625rem;
-    //border: 1px solid red;
 }
 
 .search__item_search:hover:before {
     color: #1faae2;
 }
 
-.search-text{
+.search-text {
     padding-left: 2.9375rem;
-    border: 1px solid #fff;
-    //height: 80px;
-    border-radius: 5px;   
+    padding-right: 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 0.3125rem;
+    height: 5rem;   
     outline: #fff;
-    padding-right: 20px;
+    transition: all 1s;
 }
 
 .search-text:hover {
-    //padding-left: 2.9375rem;
     border: 1px solid #1faae2;
-    border-radius: 0.3125rem;
-    height: 5rem;
-    outline: #1faae2;
-    padding-right: 1.25rem;
 }
 
-.main {
-    background-color: #605ca8;
+.main {    
     background: url("../img/iback-bg.png") no-repeat center center/cover;
+    background-color: #fff;
+    //background-color: #605ca8;
     height: 55.5rem;
 }
 
@@ -381,13 +383,21 @@ a {
 }
 
 .slider-footer {
-    font-size: 2rem;
-    color: #a7f760;
-    background-color: rgba(138,202,81,0.9);
+    font-size: 2rem;        
     display: block;
     height: 4.0625rem;
     line-height: 4.0625rem;
     text-align: center;
+}
+
+.slider-footer-effective-art{
+    background-color: rgba(138,202,81,0.9);
+    color: #a7f760;
+}
+
+.slider-footer-iphone{
+    background-color: rgba(254,235,117,0.9);
+    color: #d3a411; 
 }
 
 .slider-footer-text {
@@ -396,3 +406,169 @@ a {
     font-size: 0.875rem;
 }
 
+.slider-footer-effective-art .slider-footer-text{
+    color: #fff;
+}
+
+.slider-footer-iphone .slider-footer-text{
+    color: #d3a411;
+}
+
+.slider-nav {
+    width: 7rem;
+    background-color: #f4f4f4;
+    position: relative;
+    height: 15.0625rem;
+}
+
+.slider-nav:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 100%;
+    margin-left: 40%;
+    background: url('../img/arrow.png') no-repeat center center/cover;
+    height: 2.5rem;
+    width: 1.4375rem;
+}
+
+.about-wrapper{
+    padding-left: 8.4375rem;
+    padding-top: 1.375rem;
+    padding-bottom: 7.5rem;
+    position: relative;
+}
+
+.about-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.about-title{
+    font-weight: 700;
+    font-size: 1.625rem;
+    color: $primary_color;
+}
+
+.about-text{
+    padding-top: 1.25rem;
+    font-weight: 300;
+    font-size: 1rem;
+    color: $primary_color;
+}
+
+.whatwedo-wrapper {    
+    position: relative;
+    height: 15.625rem;
+}
+
+.whatwedo-wrapper img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 25%;
+}
+
+.whatwedo-wrapper .title, .whatwedo-wrapper .text{
+    padding-left: 40%;
+    color: $primary_color;
+}
+
+.whatwedo-wrapper .title {
+    font-weight: 600;
+    font-size: 2.74rem;
+}
+
+.whatwedo-wrapper .text{
+    font-weight: 300;
+}
+
+
+.service-line {    
+    height: 50px;
+    width: 100%;
+    border-top: 2px solid $border_color_2;
+    border-radius: 50%;
+}
+
+.service {
+    position: relative;
+    padding-bottom: 5rem;
+}
+
+.service__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 5%;
+    height: 5.625rem;
+}
+
+.service__title, .service__text{
+    padding-left: 30%;
+    color: $primary_color;
+}
+
+.service__title {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.service__text {
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.projects {
+    background-color: #efefef;
+    position: relative;
+   padding-top: 1rem;
+}
+
+.projects:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -25px;
+    height: 25px;
+    width: 100%;
+    background-color: #efefef;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.caption {
+    position: relative;
+    height: 8.75rem;
+    padding-top: 7.2rem;
+    padding-bottom: 9.375rem;
+}
+
+.caption__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: 25%;
+    margin-top: 3.5rem;
+    height: 9.4375rem;
+    //width: 8.75rem;
+}
+
+.caption__title, .caption__text {
+    padding-left: 40%;
+    color: $primary_color;
+}
+
+.caption__title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    
+}
+
+.caption__text{
+    font-size: 1.0625rem;
+    font-weight: 300; 
+}

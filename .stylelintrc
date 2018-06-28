@@ -28,9 +28,9 @@
       "except": ["first-nested"],
       "ignore": ["after-comment"]
     } ],
-    "unit-whitelist": ["em", "rem", "%", "px"],
+    "unit-whitelist": ["em", "rem", "%", "px", "deg", "s", "vh"],
     declaration-property-unit-whitelist: {
-      "font-size": ["em", "px", "rem", "%", "deg"],
+      "font-size": ["em", "px", "rem", "%"],
       "/^animation/": ["s"]
     }    
   }
