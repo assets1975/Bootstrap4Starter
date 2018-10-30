@@ -1,5 +1,36 @@
 // Main Sass File
+
+
 html {
-    margin: 0 auto;
-    background-color: #a4a412;
+    font-size: 15px;
 }
+
+.main-menu .menu-items, 
+.menu-social .menu-items {
+    height: 115px;
+}
+
+.menu-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+.menu-item {
+    margin: auto;  
+}
+
+}
+
+.main-menu .menu-item a {
+    display: block;
+    border-bottom: 5px solid #fff;
+    height: 115px;
+    line-height: 115px;    
+    text-decoration: none;
+}
+
+.main-menu .menu-item a:hover {   
+    border-bottom-color: #11749e;
+}
+

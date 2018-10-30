@@ -25,7 +25,7 @@
     } ],    
     "max-empty-lines": 2,
     "rule-empty-line-before": [ "always", {
-      "except": ["first-nested"],
+      "except": ["first-nested", "inside-block-and-after-rule"],
       "ignore": ["after-comment"]
     } ],
     "unit-whitelist": ["em", "rem", "%", "px", "s", "vh"],
