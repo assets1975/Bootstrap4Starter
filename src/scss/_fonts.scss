@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../fonts/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),  
+        url('../fonts/MyriadPro-Regular.otf')  format('opentype'),
+           url('../fonts/MyriadPro-Regular.woff') format('woff'), 
+           url('../fonts/MyriadPro-Regular.ttf')  format('truetype'), 
+           url('../fonts/MyriadPro-Regular.svg#MyriadPro-Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),  
+    url('../fonts/OpenSans-Bold.woff') format('woff'), 
+    url('../fonts/OpenSans-Bold.ttf')  format('truetype'), 
+    url('../fonts/OpenSans-Bold.svg#OpenSans-Bold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+  } 
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans.eot?#iefix') format('embedded-opentype'),  
+    url('../fonts/OpenSans.woff') format('woff'), 
+    url('../fonts/OpenSans.ttf')  format('truetype'), 
+    url('../fonts/OpenSans.svg#OpenSans') format('svg');
+    font-weight: 400;
+    font-style: normal;
+  } 
+
+@font-face {
+    font-family: 'Gotham Bold';
+    src: url('../fonts/Gotham-Bold.eot?#iefix') format('embedded-opentype'),  
+        url('../fonts/Gotham-Bold.otf')  format('opentype'),
+           url('../fonts/Gotham-Bold.woff') format('woff'), 
+           url('../fonts/Gotham-Bold.ttf')  format('truetype'), 
+           url('../fonts/Gotham-Bold.svg#Gotham-Bold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Medium';
+    src: url('../fonts/Gotham-Medium.eot?#iefix') format('embedded-opentype'),  
+        url('../fonts/Gotham-Medium.otf')  format('opentype'),
+           url('../fonts/Gotham-Medium.woff') format('woff'), 
+           url('../fonts/Gotham-Medium.ttf')  format('truetype'), 
+           url('../fonts/Gotham-Medium.svg#Gotham-Medium') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Bold Condensed';
+    src: url('../fonts/Roboto-BoldCondensed.eot?#iefix') format('embedded-opentype'),  
+           url('../fonts/Roboto-BoldCondensed.woff') format('woff'), 
+           url('../fonts/Roboto-BoldCondensed.ttf')  format('truetype'), 
+           url('../fonts/Roboto-BoldCondensed.svg#Roboto-BoldCondensed') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Book';
+    src: url('../fonts/Gotham-Book.eot?#iefix') format('embedded-opentype'),  
+    url('../fonts/Gotham-Book.otf')  format('opentype'),
+           url('../fonts/Gotham-Book.woff') format('woff'), 
+           url('../fonts/Gotham-Book.ttf')  format('truetype'), 
+           url('../fonts/Gotham-Book.svg#Gotham-Book') format('svg');
+    font-weight: 400;
+    font-style: normal;
+  } 
+
+$base-font-size: 15px;
+
+// Write your function here
+  
+@function px-to-rem ($target, $context: $base-font-size) {
+    @return ($target / $context) * 1rem;
+} 
+  

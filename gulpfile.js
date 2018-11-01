@@ -21,6 +21,7 @@ const reload = browserSync.reload;
 gulp.task('scss:build', function() {
     return gulp.src([
         'node_modules/bootstrap/scss/bootstrap.scss',
+        'node_modules/bootstrap/scss/bootstrap-reboot.scss',
         'src/scss/*.scss'
     ]) // Выбираем наши scss фаилы
     //  return gulp.src([ 'src/scss/*.scss']) // Выбираем наши scss фаилы
