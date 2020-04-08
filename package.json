@@ -9,7 +9,7 @@
   "author": "Asset Saparov",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "latest",
+    "bootstrap": "^4.4.1",
     "font-awesome": "latest",
     "jquery": "latest",
     "popper.js": "latest"
